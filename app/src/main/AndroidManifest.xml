@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.healthfitness">
+
+    <uses-feature android:name="android.hardware.type.watch" /> <!-- For receiving exercise metrics. -->
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" /> <!-- For ambient mode. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- For showing an ongoing notification. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <queries>
+        <package android:name="com.google.android.wearable.healthservices" />
+    </queries>
+
+    <application
+        android:name="com.example.healthfitness.application.HealthFitnessApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+<!--        <activity-->
+<!--            android:name=".activity.PassiveActivity"-->
+<!--            android:exported="true" >-->
+<!--&lt;!&ndash;            <intent-filter>&ndash;&gt;-->
+<!--&lt;!&ndash;                <action android:name="android.intent.action.MAIN" />&ndash;&gt;-->
+<!--&lt;!&ndash;                <category android:name="android.intent.category.LAUNCHER" />&ndash;&gt;-->
+<!--&lt;!&ndash;            </intent-filter>&ndash;&gt;-->
+<!--        </activity>-->
+
+        <uses-library
+            android:name="com.google.android.wearable"
+            android:required="true" />
+
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+
+
+        <activity
+            android:name=".activity.HealthFitnessActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- Add foreground service location permission for exercise tracking -->
+        <service
+            android:name=".service.ExerciseService"
+            android:exported="false"
+            android:foregroundServiceType="location" />
+
+
+        <!--
+ Receiver that gets notified of goals in the background. We use the same receiver for
+                  multiple goals.
+        -->
+<!--        <receiver-->
+<!--            android:name=".receiver.PassiveGoalsReceiver"-->
+<!--            android:exported="true"-->
+<!--            tools:ignore="ExportedReceiver">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="hs.passivemonitoring.GOAL" />-->
+<!--                <action android:name="hs.passivemonitoring.DATA" />-->
+
+<!--            </intent-filter>-->
+<!--        </receiver> &lt;!&ndash; Receiver that re-registers for goals after a device restart. &ndash;&gt;-->
+<!--        <receiver-->
+<!--            android:name=".receiver.StartupReceiver"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.BOOT_COMPLETED" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
+        <!--
+ Our application implements Configuration.Provider, so we don't need this to initialize
+             WorkManager.
+        -->
+<!--        <provider-->
+<!--            android:name="androidx.work.WorkManagerInitializer"-->
+<!--            android:authorities="${applicationId}.workmanager-init"-->
+<!--            tools:ignore="Instantiatable"-->
+<!--            tools:node="remove" />-->
+    </application>
+
+</manifest>

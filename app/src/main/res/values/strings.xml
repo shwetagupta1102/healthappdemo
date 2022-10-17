@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Health&amp;Fitness</string>
+    <string name="measure_status">Status: %1$s</string>
+    <string name="last_measured">Last measured:</string>
+    <string name="starting_up">Starting up</string>
+    <string name="exercise_not_available">Exercise not available on this device</string>
+    <string name="start">START</string>
+    <string name="end">END</string>
+    <string name="enable">Enable</string>
+    <string name="not_available">Not available on this device</string>
+    <string name="pause">PAUSE</string>
+    <string name="resume">RESUME</string>
+    <string name="new_exercise_confirmation">An exercise is running in another app. End it and start this one?</string>
+    <string name="empty_time">00:00</string>
+    <string name="empty_metric">—</string>
+    <string name="preparing">Preparing exercise</string>
+    <string name="gps_acquiring">GPS Acquiring</string>
+    <string name="gps_acquired">GPS Acquired!</string>
+    <string name="gps_disabled">GPS Disabled on Device</string>
+    <string name="gps_unavailable">GPS Unavailable</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="floor_goal">Last floor goal\nat %1$s</string>
+    <string name="daily_steps_goal_achieved">Steps complete!</string>
+    <string name="daily_steps_goal_not_achieved">Keep going!</string>
+    <string name="waiting_for_goal">Waiting for a <goal></goal>…</string>
+    <string name="exercise_client">Exercise Goals</string>
+    <string name="passive_monitoring_client">Passive Goals</string>
+    <string name="guided_breathing">Guided Breathing</string>
+</resources>

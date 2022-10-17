@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <color name="primary_orange">#FF9800</color>-->
+    <color name="primary_orange">#C58AF9</color>
+    <color name="primaryDark">#3B294B</color>
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/primary_orange</item>
+        <item name="colorControlActivated">?colorPrimary</item>
+
+
+    </style>
+</resources>

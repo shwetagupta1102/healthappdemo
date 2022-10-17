@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/startupFragment">
+
+    <fragment
+        android:id="@+id/startupFragment"
+        android:name="com.example.healthfitness.fragment.StartupFragment"
+        android:label="StartupFragment"
+        tools:layout="@layout/fragment_start_up" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/prepareFragment"
+        android:name="com.example.healthfitness.fragment.PrepareFragment"
+        android:label="PrepareFragment"
+        tools:layout="@layout/fragment_prepare" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/notAvailableFragment"
+        android:label="NotAvailableFragment"
+        tools:layout="@layout/fragment_not_available" />
+
+    <fragment
+        android:id="@+id/exerciseFragment"
+        android:name="com.example.healthfitness.fragment.ExerciseFragment"
+        android:label="ExerciseFragment"
+        tools:layout="@layout/fragment_exercise">
+        <action
+            android:id="@+id/to_newExerciseConfirmation"
+            app:destination="@id/newExerciseConfirmationFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/newExerciseConfirmationFragment"
+        android:name="com.example.healthfitness.fragment.NewExerciseConfirmation"
+        android:label="NewExerciseConfirmationFragment"
+        tools:layout="@layout/fragment_new_exercise_confirmation" />
+</navigation>
